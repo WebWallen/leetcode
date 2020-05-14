@@ -11,7 +11,7 @@ class RemoveDuplicatesFaster {
             if (i == 0 || nums[i] != nums[i - 1]) uniques++;
         }
 
-        // New array for uniques and their index
+        // New array for uniques and their index (counted above so we knew how much memory to allocate)
         int[] result = new int[uniques];
         int position = 0;
 
