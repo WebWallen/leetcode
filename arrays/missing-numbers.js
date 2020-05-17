@@ -1,4 +1,4 @@
-// (It suggested doing this in place but I could not think of how -- weird spec imo as I can't imagine we'd want to manipulate existing array often)
+// (It suggested doing this in place but I couldn't think of how -- weird spec imo as I can't imagine we'd want to manipulate existing array often)
 
 function findDisappearedNumbers (nums) {
     // Stick the unique numbers inside a set to avoid duplicates getting in the way
