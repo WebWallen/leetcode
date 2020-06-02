@@ -3,7 +3,7 @@ let hasCycle = function(head) {
     let fast = head;
     let slow = head;
 
-    // While list is being traversed, move fast up two positions and slow up one position (if they match, return true)
+    // While list is being traversed, move fast up two and slow up one
     while (fast !== null && fast.next !== null) {
         fast = fast.next.next;
         slow = slow.next;
@@ -11,5 +11,6 @@ let hasCycle = function(head) {
         if (fast === slow) return true;
     }
 
+    // Default (returns false if no nodes match)
     return false;
 };
