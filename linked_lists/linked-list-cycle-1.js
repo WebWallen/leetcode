@@ -11,6 +11,6 @@ let hasCycle = function(head) {
         if (fast === slow) return true;
     }
 
-    // Default (returns false if no nodes match)
+    // Default (returns false if no node matches)
     return false;
 };
