@@ -23,43 +23,16 @@ class MyLinkedList(object):
 
     def addAtHead(self, val):
         node = Node(val)
-        # Making current head new node's next fixes pointers
         node.next = self.head
         self.head = node
         self.size += 1
-    
+
     def addAtTail(self, val):
-        cur = self.head 
-        # Base case (no head)
+        cur = self.head
         if cur is None:
             self.head = Node(val)
-        else: 
-            # No next = end of line, put new node there
+        else:
             while cur.next is not None:
                 cur = cur.next
             cur.next = Node(val)
         self.size += 1
-    
-    def addAtIndex(self, index, val):
-        if index < 0 or index >= self.size: return
-        if index == 0: self.addAthead(val)
-        else:
-            cur = self.head
-            # Index - 1 because the next counts as equalizing +1
-            for i in range(index - 1):
-                cur = cur.next
-            node = Node(val)
-            # Slides node in front of current, change current next pointer to node 
-            node.next = cur.next
-            cur.next = node
-            self.size += 1  
-
-    def deleteAtIndex(self, index):
-        if index < 0 or index >= self.size: return
-        cur = self.head
-        if index == 0: self.head = cur.next
-        else: 
-            for in range (index - 1):
-                cur = cur.next
-            cur.next = cur.next.next
-        self.size -= 1
