@@ -36,3 +36,15 @@ class MyLinkedList(object):
                 cur = cur.next
             cur.next = Node(val)
         self.size += 1
+
+    def addAtIndex(self, index, val):
+        if index < 0 or index > self.size: return
+        if index == 0: self.addAtHead(val)
+        else:
+            cur = self.head
+            for i in range (index - 1):
+                cur = cur.next
+            node = Node(val)
+            node.next = cur.next
+            cur.next = node
+            self.size += 1
