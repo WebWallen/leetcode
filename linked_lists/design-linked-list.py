@@ -38,7 +38,7 @@ class MyLinkedList(object):
         self.size += 1
 
     def addAtIndex(self, index, val):
-        if index < 0 or index > self.size: return
+        if index < 0 or index >= self.size: return
         if index == 0: self.addAtHead(val)
         else:
             cur = self.head
@@ -48,3 +48,16 @@ class MyLinkedList(object):
             node.next = cur.next
             cur.next = node
             self.size += 1
+
+    def deleteAtIndex(self, index, val):
+        if index < 0 or index >= self.size: return
+        
+        cur = self.head
+        if index == 0: self.head = cur.next
+
+        else:
+            for i in range(index):
+                cur = cur.next
+            cur.next = cur.next.next
+        
+        self.size -= 1
